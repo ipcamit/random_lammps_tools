@@ -15,3 +15,8 @@ Few caveats:
  - all atoms of single molecule shall be in continuous order, eg for water, if id for O is 4, H is 1 then file should have it in order 4 1 1 4 1 1 4 1 1 or 1 4 1 1 4 1 1 4 1 or 1 1 4 1 1 4 1 1 4 etc but not in 4 4 4 1 1 1 1 1 1 etc
  - format-> python "diffusion\_coeff.py \<dump\_file\_name\> \<atom\_id   atom\_mass\> \<Total number of atoms in molecule\> [-region from\_x to\_x from\_y to\_y from\_z to_z]", without region command all the molecules of given type will be taken throughout the simulation box.
  - ***example*** if you have NMP molecule with Carbon as atom type 1, Hydrogen as type 2, nitrogen as type 5 and oxygen as type 7 then commans will look like "diffusion_coeff.py 1 12 2 1 5 14 7 16 16"
+5. **reaxc_bonds.tcl** - defines a simple function to be loaded in vmd which can apply bonding topology of any given timestep to current frame in VMD. 
+Usage: 
+ - source the function by "source [path to reaxc_bonds.tcl]"
+ - call function as "reaxc_bonds \<timestep\> \<bond information file\>"
+ - it shall show bonding topology now
